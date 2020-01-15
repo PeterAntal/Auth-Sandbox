@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
+
+  namespace :api do
+    get 'user', to: 'users#show'
+    get 'user/update', to: 'users#update'
+  end
+  
   resources :sessions, only: [:new, :create]
   delete '/logout', to: 'sessions#destroy', as: :logout
 
