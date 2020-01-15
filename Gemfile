@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 #Doorkeeper auth
+gem 'bcrypt-ruby'
 gem 'doorkeeper'
 gem 'devise', '>=4.4.0'
 
