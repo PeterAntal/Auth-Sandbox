@@ -19,6 +19,9 @@ en:
               not_match_configured: "doesn't match configured on the server."
 
   doorkeeper:
+    scopes:
+      public: 'Access your public data.'
+      write: 'Make changes to your profile.'
     applications:
       confirmations:
         destroy: 'Are you sure?'

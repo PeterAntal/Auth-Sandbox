@@ -18,16 +18,17 @@ Doorkeeper.configure do
   # adding oauth authorized applications. In other case it will return 403 Forbidden response
   # every time somebody will try to access the admin web interface.
   #
-  # admin_authenticator do
-  #   # Put your admin authentication logic here.
-  #   # Example implementation:
-  #
-  #   if current_user
-  #     head :forbidden unless current_user.admin?
-  #   else
-  #     redirect_to sign_in_url
-  #   end
-  # end
+  admin_authenticator do
+    # Put your admin authentication logic here.
+    # Example implementation:
+  
+    # No Admin user mode defined yet.
+     if current_user
+       head :forbidden unless current_user.admin?
+     else
+       redirect_to sign_in_url
+     end
+  end
 
   # If you are planning to use Doorkeeper in Rails 5 API-only application, then you might
   # want to use API mode that will skip all the views management and change the way how
@@ -75,7 +76,7 @@ Doorkeeper.configure do
   # +ActionController::API+. The return value of this option must be a stringified class name.
   # See https://doorkeeper.gitbook.io/guides/configuration/other-configurations#custom-base-controller
   #
-  # base_controller 'ApplicationController'
+  base_controller 'ApplicationController'
 
   # Reuse access token for the same resource owner within an application (disabled by default).
   #
